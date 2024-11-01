@@ -117,3 +117,55 @@ payload map ((item, index) -> {
 })
   ```
 </details>
+
+## zip
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fzip"><img width="300" src="/images/dataweave-playground-button.JPG"><a>
+
+<details>
+  <summary>Input 1</summary>
+
+  ```json
+[
+	"12345",
+	"67890"
+]
+  ```
+</details>
+<details>
+  <summary>Input 2</summary>
+
+  ```json
+[
+	"abc",
+	"xyz"
+]
+  ```
+</details>
+<details>
+  <summary>Output</summary>
+
+  ```json
+[
+	[
+		"12345",
+		"abc"
+	],
+	[
+		"67890",
+		"xyz"
+	]
+]
+  ```
+</details>
+<details>
+  <summary>Transform</summary>
+
+  ```dataweave
+%dw 2.0
+output application/json
+---
+payload map ((item, index) -> {
+    ("user " ++ (index +1)) : item.name
+})
+  ```
+</details>
