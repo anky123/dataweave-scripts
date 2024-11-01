@@ -1,7 +1,7 @@
 # DataWeave Scripts
 
 ## filter
-<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Ffilter"><img width="300" src="/images/dwplayground-button.png"><a>
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Ffilter"><img width="300" src="/images/dataweave-playground-button.JPG"><a>
 
 <details>
   <summary>Input</summary>
@@ -69,7 +69,7 @@ payload.data filter ((item, index) -> item.employee_age <= 22)
 </details>
 
 ## map
-<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fmap"><img width="300" src="/images/dwplayground-button.png"><a>
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fmap"><img width="300" src="/images/dataweave-playground-button.JPG"><a>
 
 <details>
   <summary>Input</summary>
