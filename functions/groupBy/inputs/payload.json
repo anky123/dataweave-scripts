@@ -1,0 +1,22 @@
+[
+	{
+		"id": "123",
+		"name": "rakesh",
+		"dept": "cse"
+	},
+	{
+		"id": "234",
+		"name": "kumar",
+		"dept": "cse"
+	},
+	{
+		"id": "456",
+		"name": "suraj",
+		"dept": "IT"
+	},
+	{
+		"id": "489",
+		"name": "prakash",
+		"dept": "IT"
+	}
+]

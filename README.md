@@ -383,3 +383,65 @@ output application/json
 (((payload.data1 ++ payload.data2) map ((item, index) -> (item.p_name): item.p_val) distinctBy $) reduce ((item, accumulator) -> item ++ accumulator)) orderBy $
   ```
 </details>
+
+## groupBy
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FgroupBy"><img width="300" src="/images/dataweave-playground-button.JPG"><a>
+
+<details>
+  <summary>Input</summary>
+
+  ```json
+[
+	{
+		"id": "123",
+		"name": "rakesh",
+		"dept": "cse"
+	},
+	{
+		"id": "234",
+		"name": "kumar",
+		"dept": "cse"
+	},
+	{
+		"id": "456",
+		"name": "suraj",
+		"dept": "IT"
+	},
+	{
+		"id": "489",
+		"name": "prakash",
+		"dept": "IT"
+	}
+]
+  ```
+</details>
+<details>
+  <summary>Output</summary>
+
+  ```json
+[
+	{
+		"cse": [
+			"rakesh",
+			"kumar"
+		]
+	},
+	{
+		"IT": [
+			"suraj",
+			"prakash"
+		]
+	}
+]
+  ```
+</details>
+<details>
+  <summary>Transform</summary>
+
+  ```dataweave
+%dw 2.0
+output application/json
+---
+payload groupBy ((item, index) -> item.dept) pluck ((value, key, index) -> (key):value.name)
+  ```
+</details>
