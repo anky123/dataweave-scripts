@@ -1,0 +1,20 @@
+[
+	{
+		"fullname": "Grace Kelly",
+		"age": "22",
+		"hiredate": "October 15, 2005",
+		"product": "Printer"
+	},
+	{
+		"fullname": "Cary Grant",
+		"age": "32",
+		"hiredate": "October 20, 2005",
+		"product": "Desktop"
+	},
+	{
+		"fullname": "Clark Gable",
+		"age": "42",
+		"hiredate": "October 25, 2005",
+		"product": "Keyboard"
+	}
+]

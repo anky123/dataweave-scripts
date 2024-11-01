@@ -226,3 +226,98 @@ output application/json
 ((payload.array1 ++ payload.array2) distinctBy $)  orderBy -$
   ```
 </details>
+
+## substringAfter
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FsubstringAfter"><img width="300" src="/images/dataweave-playground-button.JPG"><a>
+
+<details>
+  <summary>Input</summary>
+
+  ```json
+[
+	{
+		"fullname": "Grace Kelly",
+		"age": "22",
+		"hiredate": "October 15, 2005",
+		"product": "Printer"
+	},
+	{
+		"fullname": "Cary Grant",
+		"age": "32",
+		"hiredate": "October 20, 2005",
+		"product": "Desktop"
+	},
+	{
+		"fullname": "Clark Gable",
+		"age": "42",
+		"hiredate": "October 25, 2005",
+		"product": "Keyboard"
+	}
+]
+  ```
+</details>
+<details>
+  <summary>Output</summary>
+
+  ```xml
+<?xml version='1.0' encoding='UTF-8'?>
+<employees>
+	<employee>
+		<name age="22">
+			<lastname>Kelly</lastname>
+			<firstname>Grace</firstname>
+		</name>
+		<hiredate>October 15, 2005</hiredate>
+		<projects>
+			<project>
+				<product>Printer</product>
+			</project>
+		</projects>
+	</employee>
+	<employee>
+		<name age="32">
+			<lastname>Grant</lastname>
+			<firstname>Cary</firstname>
+		</name>
+		<hiredate>October 20, 2005</hiredate>
+		<projects>
+			<project>
+				<product>Desktop</product>
+			</project>
+		</projects>
+	</employee>
+	<employee>
+		<name age="42">
+			<lastname>Gable</lastname>
+			<firstname>Clark</firstname>
+		</name>
+		<hiredate>October 25, 2005</hiredate>
+		<projects>
+			<project>
+				<product>Keyboard</product>
+			</project>
+		</projects>
+	</employee>
+</employees>
+  ```
+</details>
+<details>
+  <summary>Transform</summary>
+
+  ```dataweave
+%dw 2.0
+output application/xml
+import * from dw::core::Strings
+---
+employees : {
+    employee: payload map ((item, index) -> {
+        name: {
+            lastname : substringAfter(item.fullname, " "), 
+            firstname : substringBefore(item.fullname, " ")
+        },
+        hiredate : item.hiredate,
+        projects : project : product : item.product
+    })
+}
+  ```
+</details>
