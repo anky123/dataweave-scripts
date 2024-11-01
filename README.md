@@ -163,9 +163,66 @@ payload map ((item, index) -> {
   ```dataweave
 %dw 2.0
 output application/json
+import leftJoin from dw::core::Arrays
+var otherInput = [
+	"abc",
+	"xyz"
+]
 ---
-payload map ((item, index) -> {
-    ("user " ++ (index +1)) : item.name
-})
+payload zip otherInput
+  ```
+</details>
+
+## distinctBy
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FdistinctBy"><img width="300" src="/images/dataweave-playground-button.JPG"><a>
+
+<details>
+  <summary>Input</summary>
+
+  ```json
+{
+	"array1": [
+		1,
+		2,
+		3,
+		5,
+		6,
+		7
+	],
+	"array2": [
+		5,
+		7,
+		1,
+		3,
+		8,
+		4
+	]
+}
+  ```
+</details>
+<details>
+  <summary>Output</summary>
+
+  ```json
+[
+	8,
+	7,
+	6,
+	5,
+	4,
+	3,
+	2,
+	1
+]
+  ```
+</details>
+<details>
+  <summary>Transform</summary>
+
+  ```dataweave
+%dw 2.0
+output application/json
+---
+((payload.array1 ++ payload.array2) distinctBy $)  orderBy -$
   ```
 </details>
