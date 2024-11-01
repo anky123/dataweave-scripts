@@ -321,3 +321,65 @@ employees : {
 }
   ```
 </details>
+
+## reduce
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Freduce"><img width="300" src="/images/dataweave-playground-button.JPG"><a>
+
+<details>
+  <summary>Input</summary>
+
+  ```json
+{
+	"data1": [
+		{
+			"p_name": "3",
+			"p_val": "4"
+		},
+		{
+			"p_name": "7",
+			"p_val": "8"
+		},
+		{
+			"p_name": "1",
+			"p_val": "2"
+		}
+	],
+	"data2": [
+		{
+			"p_name": "1",
+			"p_val": "2"
+		},
+		{
+			"p_name": "3",
+			"p_val": "4"
+		},
+		{
+			"p_name": "5",
+			"p_val": "6"
+		}
+	]
+}
+  ```
+</details>
+<details>
+  <summary>Output</summary>
+
+  ```json
+{
+	"1": "2",
+	"3": "4",
+	"5": "6",
+	"7": "8"
+}
+  ```
+</details>
+<details>
+  <summary>Transform</summary>
+
+  ```dataweave
+%dw 2.0
+output application/json
+---
+(((payload.data1 ++ payload.data2) map ((item, index) -> (item.p_name): item.p_val) distinctBy $) reduce ((item, accumulator) -> item ++ accumulator)) orderBy $
+  ```
+</details>
