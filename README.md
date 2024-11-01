@@ -7,7 +7,7 @@
   <summary>Input</summary>
 
   ```json
-  {
+{
 	"status": "success",
 	"data": [
 		{
@@ -46,7 +46,7 @@
   <summary>Output</summary>
 
   ```json
-  [
+[
   {
     "id": "4",
     "employee_name": "Cedric Kelly",
@@ -60,7 +60,7 @@
 <details>
   <summary>Transform</summary>
 
-  ```json
+  ```dataweave
 %dw 2.0
 output application/json
 ---
