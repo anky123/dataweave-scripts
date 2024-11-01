@@ -42,3 +42,28 @@
 }
   ```
 </details>
+<details>
+  <summary>Output</summary>
+
+  ```json
+  [
+  {
+    "id": "4",
+    "employee_name": "Cedric Kelly",
+    "employee_salary": 433060,
+    "employee_age": 22,
+    "profile_image": ""
+  }
+]
+  ```
+</details>
+<details>
+  <summary>Transform</summary>
+
+  ```json
+%dw 2.0
+output application/json
+---
+payload.data filter ((item, index) -> item.employee_age <= 22)
+  ```
+</details>
