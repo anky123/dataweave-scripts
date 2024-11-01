@@ -1,7 +1,7 @@
 # DataWeave Scripts
 
 #### filter
-<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FmapObject"><img width="300" src="/images/dwplayground-button.png"><a>
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Ffilter"><img width="300" src="/images/dwplayground-button.png"><a>
 
 <details>
   <summary>Input</summary>
@@ -65,5 +65,55 @@
 output application/json
 ---
 payload.data filter ((item, index) -> item.employee_age <= 22)
+  ```
+</details>
+
+#### map
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fmap"><img width="300" src="/images/dwplayground-button.png"><a>
+
+<details>
+  <summary>Input</summary>
+
+  ```json
+[
+	{
+		"name": "Jane"
+	},
+	{
+		"name": "John"
+	},
+	{
+		"name": "Joe"
+	}
+]
+  ```
+</details>
+<details>
+  <summary>Output</summary>
+
+  ```json
+[
+	{
+		"user 1": "Jane"
+	},
+	{
+		"user 2": "John"
+	},
+	{
+		"user 3": "Joe"
+	}
+]
+  ```
+</details>
+<details>
+  <summary>Transform</summary>
+
+  ```dataweave
+%dw 2.0
+output application/json
+---
+payload map ((item, index) -> {
+    ("user " ++ (index +1)) : item.name
+})
   ```
 </details>
