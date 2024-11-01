@@ -385,7 +385,7 @@ output application/json
 </details>
 
 ## groupBy
-<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FgroupBy"><img width="100" src="/images/dataweave-playground-button.JPG" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FgroupBy"><img src="/images/dataweave-playground-button.JPG" style="box-shadow: 10px 10px 5px 12px lightblue"><a>
 
 <details>
   <summary>Input</summary>
