@@ -1,0 +1,20 @@
+[
+	{
+		"name": "Abc",
+		"address": "Mumbai",
+		"phone": "91-1234567891",
+		"id": 123
+	},
+	{
+		"name": "Pqr",
+		"address": "Pune",
+		"phone": "91-1234985438",
+		"id": 456
+	},
+	{
+		"name": "Abc",
+		"address": "Delhi",
+		"phone": "91-1234567891",
+		"id": 341
+	}
+]

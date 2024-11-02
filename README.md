@@ -445,3 +445,105 @@ output application/json
 payload groupBy ((item, index) -> item.dept) pluck ((value, key, index) -> (key):value.name)
   ```
 </details>
+
+## groupBy
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fcontains"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
+
+<details>
+  <summary>Input</summary>
+
+  ```json
+[
+	{
+		"name": "Abc",
+		"address": "Mumbai",
+		"phone": "91-1234567891",
+		"id": 123
+	},
+	{
+		"name": "Pqr",
+		"address": "Pune",
+		"phone": "91-1234985438",
+		"id": 456
+	},
+	{
+		"name": "Abc",
+		"address": "Delhi",
+		"phone": "91-1234567891",
+		"id": 341
+	}
+]
+  ```
+</details>
+<details>
+  <summary>Output</summary>
+
+  ```json
+[
+	{
+		"name": "Abc",
+		"address": "Mumbai",
+		"phone": "91-1234567891",
+		"id": 123,
+		"sid": 123,
+		"postalCode": "67890",
+		"country": "USA"
+	},
+	{
+		"name": "Pqr",
+		"address": "Pune",
+		"phone": "91-1234985438",
+		"id": 456,
+		"sid": 456,
+		"postalCode": "54983",
+		"country": "UK"
+	},
+	{
+		"name": "Abc",
+		"address": "Delhi",
+		"phone": "91-1234567891",
+		"id": 341,
+		"sid": 341,
+		"postalCode": "27932",
+		"country": "EU"
+	}
+]
+  ```
+</details>
+<details>
+  <summary>Transform</summary>
+
+  ```dataweave
+%dw 2.0
+var otherArray = [
+  {
+    "sid": 123,
+    "postalCode": "67890",
+    "country": "USA"
+  },
+  {
+    "sid": 456,
+    "postalCode": "54983",
+    "country": "UK"
+  },
+  {
+    "sid": 341,
+    "postalCode": "27932",
+    "country": "EU"
+  }
+]
+output application/json  
+---
+payload map (array1Value) -> {
+  (otherArray filter ($.sid contains array1Value.id) map (array2Value) -> {
+    name: array1Value.name,
+    address: array1Value.address,
+    phone: array1Value.phone,
+    id: array1Value.id,
+    sid: array2Value.sid,
+    postalCode: array2Value.postalCode,
+    country: array2Value.country
+  })
+}
+  ```
+</details>
