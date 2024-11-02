@@ -1,7 +1,7 @@
 # DataWeave Scripts
 
 ## filter
-<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Ffilter"><img width="300" src="/images/dataweave-playground-button.JPG"><a>
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Ffilter"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
   <summary>Input</summary>
@@ -69,7 +69,7 @@ payload.data filter ((item, index) -> item.employee_age <= 22)
 </details>
 
 ## map
-<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fmap"><img width="300" src="/images/dataweave-playground-button.JPG"><a>
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fmap"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
   <summary>Input</summary>
@@ -119,7 +119,7 @@ payload map ((item, index) -> {
 </details>
 
 ## zip
-<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fzip"><img width="300" src="/images/dataweave-playground-button.JPG"><a>
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fzip"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
   <summary>Input 1</summary>
@@ -174,7 +174,7 @@ payload zip otherInput
 </details>
 
 ## distinctBy
-<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FdistinctBy"><img width="300" src="/images/dataweave-playground-button.JPG"><a>
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FdistinctBy"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
   <summary>Input</summary>
@@ -228,7 +228,7 @@ output application/json
 </details>
 
 ## substringAfter
-<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FsubstringAfter"><img width="300" src="/images/dataweave-playground-button.JPG"><a>
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FsubstringAfter"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
   <summary>Input</summary>
@@ -323,7 +323,7 @@ employees : {
 </details>
 
 ## reduce
-<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Freduce"><img width="300" src="/images/dataweave-playground-button.JPG"><a>
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Freduce"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
   <summary>Input</summary>
