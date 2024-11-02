@@ -1,0 +1,15 @@
+{
+  "orderId": "12345",
+  "customerName": "John Doe",
+  "totalAmount": 1500,
+  "items": [
+    {
+      "productName": "Laptop",
+      "quantity": "2"
+    },
+    {
+      "productName": "Printer",
+      "quantity": "1"
+    }
+  ]
+}

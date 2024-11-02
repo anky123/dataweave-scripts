@@ -446,7 +446,7 @@ payload groupBy ((item, index) -> item.dept) pluck ((value, key, index) -> (key)
   ```
 </details>
 
-## groupBy
+## contains
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fcontains"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -543,6 +543,74 @@ payload map (array1Value) -> {
     sid: array2Value.sid,
     postalCode: array2Value.postalCode,
     country: array2Value.country
+  })
+}
+  ```
+</details>
+
+## map
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fmap1"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
+
+<details>
+  <summary>Input</summary>
+
+  ```xml
+<order>
+	<orderId>12345</orderId>
+	<customer>
+		<firstName>John</firstName>
+		<lastName>Doe</lastName>
+	</customer>
+	<items>
+		<item>
+			<productName>Laptop</productName>
+			<quantity>2</quantity>
+			<price>1200.00</price>
+		</item>
+		<item>
+			<productName>Printer</productName>
+			<quantity>1</quantity>
+			<price>300.00</price>
+		</item>
+	</items>
+</order>
+  ```
+</details>
+<details>
+  <summary>Output</summary>
+
+  ```json
+{
+  "orderId": "12345",
+  "customerName": "John Doe",
+  "totalAmount": 1500,
+  "items": [
+    {
+      "productName": "Laptop",
+      "quantity": "2"
+    },
+    {
+      "productName": "Printer",
+      "quantity": "1"
+    }
+  ]
+}
+  ```
+</details>
+<details>
+  <summary>Transform</summary>
+
+  ```dataweave
+%dw 2.0
+output application/json  
+---
+{
+  orderId: payload.order.orderId,
+  customerName: payload.order.customer.firstName ++ " " ++ payload.order.customer.lastName,
+  totalAmount: sum(payload.order.items.*item.price map ((item, index) -> item as Number)),
+  items: payload.order.items.*item map ((item, index) -> {
+    productName: item.productName,
+    quantity: item.quantity
   })
 }
   ```

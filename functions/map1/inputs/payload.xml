@@ -1,0 +1,19 @@
+<order>
+	<orderId>12345</orderId>
+	<customer>
+		<firstName>John</firstName>
+		<lastName>Doe</lastName>
+	</customer>
+	<items>
+		<item>
+			<productName>Laptop</productName>
+			<quantity>2</quantity>
+			<price>1200.00</price>
+		</item>
+		<item>
+			<productName>Printer</productName>
+			<quantity>1</quantity>
+			<price>300.00</price>
+		</item>
+	</items>
+</order>
