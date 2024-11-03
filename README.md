@@ -1,6 +1,6 @@
 # DataWeave Scripts
 
-## filter
+## 1. filter
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Ffilter"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -68,7 +68,7 @@ payload.data filter ((item, index) -> item.employee_age <= 22)
   ```
 </details>
 
-## map
+## 2. map
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fmap"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -118,7 +118,7 @@ payload map ((item, index) -> {
   ```
 </details>
 
-## zip
+## 3. zip
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fzip"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -173,7 +173,7 @@ payload zip otherInput
   ```
 </details>
 
-## distinctBy
+## 4. distinctBy
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FdistinctBy"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -227,7 +227,7 @@ output application/json
   ```
 </details>
 
-## substringAfter
+## 5. substringAfter
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FsubstringAfter"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -322,7 +322,7 @@ employees : {
   ```
 </details>
 
-## reduce
+## 6. reduce
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Freduce"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -384,7 +384,7 @@ output application/json
   ```
 </details>
 
-## groupBy
+## 7. groupBy
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FgroupBy"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -446,7 +446,7 @@ payload groupBy ((item, index) -> item.dept) pluck ((value, key, index) -> (key)
   ```
 </details>
 
-## contains
+## 8. contains
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fcontains"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -548,7 +548,7 @@ payload map (array1Value) -> {
   ```
 </details>
 
-## map
+## 9. map
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fmap1"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -613,5 +613,87 @@ output application/json
     quantity: item.quantity
   })
 }
+  ```
+</details>
+
+## 10. pluck
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fpluck"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
+
+<details>
+  <summary>Input</summary>
+
+  ```xml
+<notes>
+	<note>
+		<to>Srikant</to>
+		<from>Candidate</from>
+		<heading>Questions</heading>
+		<body>Answer that! wowo</body>
+	</note>
+	<note>
+		<to>Ankit</to>
+		<from>Candidate2</from>
+		<heading>Questions</heading>
+		<body>Answer that! wowo</body>
+	</note>
+	<note>
+		<to>Aditya</to>
+		<bcc>Sunita</bcc>
+		<from>Candidate3</from>
+		<heading>Questions</heading>
+		<body>Answer that! wowo</body>
+	</note>
+</notes>
+  ```
+</details>
+<details>
+  <summary>Output</summary>
+
+  ```json
+[
+	{
+		"to": [
+			"Srikant",
+			"Ankit",
+			"Aditya"
+		]
+	},
+	{
+		"from": [
+			"Candidate",
+			"Candidate2",
+			"Candidate3"
+		]
+	},
+	{
+		"heading": [
+			"Questions",
+			"Questions",
+			"Questions"
+		]
+	},
+	{
+		"body": [
+			"Answer that! wowo",
+			"Answer that! wowo",
+			"Answer that! wowo"
+		]
+	},
+	{
+		"bcc": [
+			"Sunita"
+		]
+	}
+]
+  ```
+</details>
+<details>
+  <summary>Transform</summary>
+
+  ```dataweave
+%dw 2.0
+output application/json
+---
+payload.notes mapObject ((value) -> value ) groupBy ((value, key) -> key) pluck ((value, key, index) -> (key) : valuesOf(value))
   ```
 </details>

@@ -1,0 +1,21 @@
+<notes>
+	<note>
+		<to>Srikant</to>
+		<from>Candidate</from>
+		<heading>Questions</heading>
+		<body>Answer that! wowo</body>
+	</note>
+	<note>
+		<to>Ankit</to>
+		<from>Candidate2</from>
+		<heading>Questions</heading>
+		<body>Answer that! wowo</body>
+	</note>
+	<note>
+		<to>Aditya</to>
+		<bcc>Sunita</bcc>
+		<from>Candidate3</from>
+		<heading>Questions</heading>
+		<body>Answer that! wowo</body>
+	</note>
+</notes>
