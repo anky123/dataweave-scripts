@@ -697,3 +697,60 @@ output application/json
 payload.notes mapObject ((value) -> value ) groupBy ((value, key) -> key) pluck ((value, key, index) -> (key) : valuesOf(value))
   ```
 </details>
+
+## 11. pluck
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fpluck1"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
+
+<details>
+  <summary>Input</summary>
+
+  ```json
+[
+	{
+		"Fruit": "apple",
+		"quantity": "14"
+	},
+	{
+		"Fruit": "orange",
+		"quantity": "13"
+	},
+	{
+		"Fruit": "apple",
+		"quantity": "6"
+	},
+	{
+		"Fruit": "orange",
+		"quantity": "12"
+	}
+]
+  ```
+</details>
+<details>
+  <summary>Output</summary>
+
+  ```json
+[
+	{
+		"Fruit": "apple",
+		"quantity": 20
+	},
+	{
+		"Fruit": "orange",
+		"quantity": 25
+	}
+]
+  ```
+</details>
+<details>
+  <summary>Transform</summary>
+
+  ```dataweave
+%dw 2.0
+output application/json  
+---
+payload groupBy ((item, index) -> item.Fruit) pluck ((value, key, index) -> {
+  "Fruit": (key),
+  "quantity": sum(value.quantity)
+})
+  ```
+</details>
