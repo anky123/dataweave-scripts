@@ -754,3 +754,70 @@ payload groupBy ((item, index) -> item.Fruit) pluck ((value, key, index) -> {
 })
   ```
 </details>
+
+## 12. reduce
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Freduce1"><img width="100" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
+
+<details>
+  <summary>Input</summary>
+
+  ```json
+[
+	[
+		{
+			"name": "john",
+			"gender": "M"
+		},
+		{
+			"name": "leonardo",
+			"gender": "M"
+		}
+	],
+	[
+		{
+			"name": "leonardo",
+			"gender": "M"
+		},
+		{
+			"name": "alicia",
+			"gender": "F"
+		},
+		{
+			"name": "jennifer",
+			"gender": "F"
+		},
+		{
+			"name": "john",
+			"gender": "M"
+		}
+	]
+]
+  ```
+</details>
+<details>
+  <summary>Output</summary>
+
+  ```json
+[
+	"Mr.john",
+	"Mr.leonardo",
+	"Ms.alicia",
+	"Ms.jennifer"
+]
+  ```
+</details>
+<details>
+  <summary>Transform</summary>
+
+  ```dataweave
+%dw 2.0
+output application/json  
+---
+((payload map ((item, index) -> item) reduce ((val, acc) -> acc ++ val)) map ((item1, index1) -> {
+  "name": (if (item1.gender == "F")
+    "Ms."
+  else
+    "Mr.") ++ item1.name
+}) distinctBy $) map ((item, index) -> item.name)
+  ```
+</details>
