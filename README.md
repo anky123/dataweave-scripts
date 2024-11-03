@@ -2,6 +2,7 @@
 
 ## 1. filter
 - Extract an object from an array of object based on employee age.
+  
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Ffilter"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
