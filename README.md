@@ -1,6 +1,7 @@
 # DataWeave Scripts
 
 ## 1. filter
+- Extract an object from an array of object based on employee age.
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Ffilter"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -69,6 +70,7 @@ payload.data filter ((item, index) -> item.employee_age <= 22)
 </details>
 
 ## 2. map
+- Replace keys of an array with its index position.
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fmap"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -119,6 +121,7 @@ payload map ((item, index) -> {
 </details>
 
 ## 3. zip
+- Merge two arrays in sync with each index position.
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fzip"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -174,6 +177,7 @@ payload zip otherInput
 </details>
 
 ## 4. distinctBy
+- Merge two arrays based on distinct values.
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FdistinctBy"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -228,6 +232,7 @@ output application/json
 </details>
 
 ## 5. substringAfter
+- Transform a json to xml in pre-defined format.
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FsubstringAfter"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -323,6 +328,7 @@ employees : {
 </details>
 
 ## 6. reduce
+- Get only the values from two arrays in a ascending order.
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Freduce"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -385,6 +391,7 @@ output application/json
 </details>
 
 ## 7. groupBy
+- Group peoples from array object based on dept.
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FgroupBy"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -447,6 +454,7 @@ payload groupBy ((item, index) -> item.dept) pluck ((value, key, index) -> (key)
 </details>
 
 ## 8. contains
+- Merge two json arrays based on matching id.
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fcontains"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -549,6 +557,10 @@ payload map (array1Value) -> {
 </details>
 
 ## 9. map
+- Convert xml to a json.
+- Append first and last name into full name.
+- Calculate totalAmount from list of pricesss.
+
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fmap1"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -617,6 +629,9 @@ output application/json
 </details>
 
 ## 10. pluck
+- Convert xml to a json
+- Create list of array from keys
+- Prepare list of values of each key 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fpluck"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -699,6 +714,8 @@ payload.notes mapObject ((value) -> value ) groupBy ((value, key) -> key) pluck 
 </details>
 
 ## 11. pluck
+- Group the Fruit list.
+- Prepare the total count of fruits.
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fpluck1"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -756,6 +773,8 @@ payload groupBy ((item, index) -> item.Fruit) pluck ((value, key, index) -> {
 </details>
 
 ## 12. reduce
+- Merge list of two array into one.
+- Add Mr. or Ms. based on geneder values (M or F).
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Freduce1"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -819,5 +838,62 @@ output application/json
   else
     "Mr.") ++ item1.name
 }) distinctBy $) map ((item, index) -> item.name)
+  ```
+</details>
+
+## 13. distinctBy
+- Group list of objects based on skills
+- Filter the objects based on distinct id
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FdistinctBy1"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
+
+<details>
+  <summary>Input</summary>
+
+  ```json
+[
+	{
+		"name": "Ankur",
+		"id": 1,
+		"skill": "Mule"
+	},
+	{
+		"name": "Ankur",
+		"id": 2,
+		"skill": "Mulesoft"
+	},
+	{
+		"name": "Ankur",
+		"id": 1,
+		"skill": "Mule"
+	}
+]
+  ```
+</details>
+<details>
+  <summary>Output</summary>
+
+  ```json
+[
+	{
+		"name": "Ankur",
+		"id": 1,
+		"skill": "Mule"
+	},
+	{
+		"name": "Ankur",
+		"id": 2,
+		"skill": "Mulesoft"
+	}
+]
+  ```
+</details>
+<details>
+  <summary>Transform</summary>
+
+  ```dataweave
+%dw 2.0
+output application/json  
+---
+((payload groupBy ((item, index) -> item.skill) pluck ((value, key, index) -> value)) reduce ((val, acc) -> acc ++ val)) distinctBy $.id
   ```
 </details>
