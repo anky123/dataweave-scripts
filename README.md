@@ -72,6 +72,7 @@ payload.data filter ((item, index) -> item.employee_age <= 22)
 
 ## 2. map
 - Replace keys of an array with its index position.
+  
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fmap"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -123,6 +124,7 @@ payload map ((item, index) -> {
 
 ## 3. zip
 - Merge two arrays in sync with each index position.
+  
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fzip"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -179,6 +181,7 @@ payload zip otherInput
 
 ## 4. distinctBy
 - Merge two arrays based on distinct values.
+  
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FdistinctBy"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -234,6 +237,7 @@ output application/json
 
 ## 5. substringAfter
 - Transform a json to xml in pre-defined format.
+  
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FsubstringAfter"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -330,6 +334,7 @@ employees : {
 
 ## 6. reduce
 - Get only the values from two arrays in a ascending order.
+  
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Freduce"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -393,6 +398,7 @@ output application/json
 
 ## 7. groupBy
 - Group peoples from array object based on dept.
+  
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FgroupBy"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -456,6 +462,7 @@ payload groupBy ((item, index) -> item.dept) pluck ((value, key, index) -> (key)
 
 ## 8. contains
 - Merge two json arrays based on matching id.
+  
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fcontains"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -561,7 +568,7 @@ payload map (array1Value) -> {
 - Convert xml to a json.
 - Append first and last name into full name.
 - Calculate totalAmount from list of pricesss.
-
+  
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fmap1"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -632,7 +639,8 @@ output application/json
 ## 10. pluck
 - Convert xml to a json
 - Create list of array from keys
-- Prepare list of values of each key 
+- Prepare list of values of each key
+  
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fpluck"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -717,6 +725,7 @@ payload.notes mapObject ((value) -> value ) groupBy ((value, key) -> key) pluck 
 ## 11. pluck
 - Group the Fruit list.
 - Prepare the total count of fruits.
+  
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Fpluck1"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -776,6 +785,7 @@ payload groupBy ((item, index) -> item.Fruit) pluck ((value, key, index) -> {
 ## 12. reduce
 - Merge list of two array into one.
 - Add Mr. or Ms. based on geneder values (M or F).
+  
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2Freduce1"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
@@ -845,6 +855,7 @@ output application/json
 ## 13. distinctBy
 - Group list of objects based on skills
 - Filter the objects based on distinct id
+  
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=anky123%2Fdataweave-scripts&path=functions%2FdistinctBy1"><img width="200" src="/images/dataweave-playground-button.jpeg" style="box-shadow: 10px 10px rgba(0, 0, 0, 0.6)"><a>
 
 <details>
